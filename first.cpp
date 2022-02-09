@@ -20,8 +20,7 @@ int main()
     std::cout << std::endl;
 
     // Print
-    std::cout << "Your input is: " << GueseA << " " << GueseB << " " << GueseC << std::endl
-              << std::endl;
+    std::cout << "Your input is: " << GueseA << " " << GueseB << " " << GueseC << std::endl;
 
     // declare variables.
     const int CodeA = 1;
