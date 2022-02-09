@@ -1,14 +1,14 @@
 #include <iostream>
 
-void PrintIntroduction()
+void PrintIntroduction(int Difficulty)
 {
-    std::cout << "\n\nYou are a secret agent breaking into a secure server room...\n";
+    std::cout << "\n\nYou are a secret agent breaking into a level " << Difficulty << " secure server room...\n";
     std::cout << "Enter the correct code to continue...\n\n";
 }
 
-bool PlayGame()
+bool PlayGame(int Difficulty)
 {
-    PrintIntroduction();
+    PrintIntroduction(Difficulty);
 
     const int CodeA = 1;
     const int CodeB = 2;
@@ -32,24 +32,37 @@ bool PlayGame()
     // Check if the players guess is correct
     if (GuessSum == CodeSum && GuessProduct == CodeProduct)
     {
-        std::cout << "\nYou win!";
         return true;
     }
     else
     {
-        std::cout << "\nYou lose!";
         return false;
     }
 }
 
 int main()
 {
-    while (true)
+    int LevelDifficulty = 1;
+    int const MAXDIFFICULTY = 5;
+    while (LevelDifficulty <= MAXDIFFICULTY)
     {
-        bool bLevelComplete = PlayGame();
+        bool bLevelComplete = PlayGame(LevelDifficulty);
         std::cin.clear();  // Clears any errors
         std::cin.ignore(); // Discards the buffer
+        if (bLevelComplete)
+        {
+            if (LevelDifficulty <= 4)
+            {
+                std::cout << "\n***Nice work agent, You extracted a file! Keep going..***\n";
+            }
+            ++LevelDifficulty;
+        }
+        else
+        {
+            std::cout << "\n***opps, you entered a wrong code!, careful agent! Try again***\n";
+        }
     }
+    std::cout << "\n\n*****************************************************************\n***Grate work agent, You got all files, Now get aout of there!***\n*****************************************************************\n\n";
 
     return 0;
 }
