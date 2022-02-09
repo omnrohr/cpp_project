@@ -10,9 +10,9 @@ bool PlayGame(int Difficulty)
 {
     PrintIntroduction(Difficulty);
 
-    const int CodeA = 1;
-    const int CodeB = 2;
-    const int CodeC = 3;
+    const int CodeA = (rand() % Difficulty) + Difficulty;
+    const int CodeB = (rand() % Difficulty) + Difficulty;
+    const int CodeC = (rand() % Difficulty) + Difficulty;
 
     const int CodeSum = CodeA + CodeB + CodeC;
     const int CodeProduct = CodeA * CodeB * CodeC;
