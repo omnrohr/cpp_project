@@ -12,17 +12,17 @@ INCLUDELIB OLDNAMES
 PUBLIC	_main
 ; Function compile flags: /Odtp
 _TEXT	SEGMENT
-_i$ = -4						; size = 4
+_a$ = -4						; size = 4
 _main	PROC
 ; File D:\cprog\first.cpp
-; Line 2
+; Line 3
 	push	ebp
 	mov	ebp, esp
 	push	ecx
 ; Line 4
-	mov	DWORD PTR _i$[ebp], 0
+	mov	DWORD PTR _a$[ebp], 1
 ; Line 5
-	mov	eax, DWORD PTR _i$[ebp]
+	mov	eax, DWORD PTR _a$[ebp]
 ; Line 6
 	mov	esp, ebp
 	pop	ebp
